@@ -4,6 +4,6 @@ This repository contains the data and scripts to build the [Metropolitana di Rom
 
 Build instructions (linux):
 
-* Install the Helvetica font
+* Install the Helvetica font and Inkscape
 * Run `./generate.sh`
 * The images will be in the three `out` directories
