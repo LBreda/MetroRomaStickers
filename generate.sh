@@ -2,6 +2,7 @@
 {
   IFS=,
   while read -r index template station; do
-    inkscape --export-filename=out_$template/$index-$station.png -w 512 <(sed "s/PLACEHOLDER/$station/" template_$template.svg)
+    cleaned_station=$(echo $station | sed -e 's/\\\//_/g')
+    inkscape --export-filename="out_$template/$index-$cleaned_station.png" -w 512 <(sed "s/PLACEHOLDER/$station/" template_$template.svg)
   done;
 } < list.csv
